@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply text-slate-200 antialiased;
+  background-color: #0b1f16;
+  background-image:
+    linear-gradient(rgba(10, 15, 12, 0.72), rgba(10, 15, 12, 0.72)),
+    url('/nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+html.light body {
+  @apply text-slate-800;
+  background-color: #f9eded;
+  background-image:
+    repeating-linear-gradient(105deg, rgba(0, 0, 0, 0.02) 0px, rgba(0, 0, 0, 0.02) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(75deg, rgba(255, 255, 255, 0.35) 0px, rgba(255, 255, 255, 0.35) 1px, transparent 1px, transparent 5px),
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(239, 68, 68, 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(244, 63, 94, 0.10), transparent);
+}
+
+.glass {
+  @apply bg-white/5 border border-white/10 rounded-2xl backdrop-blur-xl shadow-xl shadow-black/20;
+}
+
+html.light .glass {
+  @apply bg-white/70 border-slate-200 shadow-slate-300/40;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full;
+}
